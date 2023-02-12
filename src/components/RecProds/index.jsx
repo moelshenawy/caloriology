@@ -58,12 +58,9 @@ export default function RecProds() {
                       </Link>
                     </div>
                     <div className="icon-container" onClick={() => addToFavorite(product)}>
-<<<<<<< HEAD
-                      {favVideos?.filter((item) => item.id === product.id)[0] ? <LikeFill /> : <Like />}</div>
-=======
-                      {favVideos?.filter((item) => item.id === product.id)[0] ? <LikeFill /> : <Like />}        
+                      {favVideos?.filter((item) => item.id === product.id)[0] ? <LikeFill /> : <Like />}
                     </div>
->>>>>>> 4b5b648f99797a772818eec280d9a68f57f3734e
+
                   </div>
                 </div>
               ))}
@@ -85,7 +82,7 @@ export default function RecProds() {
 
         </div>
 
-      </section>
+      </section >
     </>
   )
 }
