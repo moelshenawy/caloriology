@@ -1,0 +1,96 @@
+#clients {
+  background-color: #7bb569;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  .clients {
+    @media screen and (max-width: 450px) {
+      margin-right: 15px;
+    }
+  }
+  h4 {
+    font-family: "Russo One";
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #f9f9f9;
+  }
+  .client-text {
+    background-color: #f9f9f9;
+    width: 390px;
+    height: 281px;
+    border-radius: 50px 50px 50px 0px;
+    position: relative;
+
+    @media screen and (max-width: 1300px) {
+      width: 350px;
+    }
+    @media screen and (max-width: 1200px) {
+      width: 290px;
+    }
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+
+    svg {
+      position: absolute;
+      top: 28px;
+      right: 32.5px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+  .client-info {
+    h6 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      span {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+  }
+  .rec-carousel-wrapper {
+    button {
+      background-color: transparent;
+      border: none;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+  .test-wrap {
+    .rec-carousel-wrapper {
+      .rec-carousel {
+        .rec-arrow {
+          display: none;
+        }
+        button[disabled] {
+        }
+      }
+    }
+    .rec-dot {
+      background-color: #d9d9d9;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      box-shadow: none;
+    }
+    .rec-dot_active {
+      opacity: 1;
+      background-color: #fbfbfb !important;
+      width: 16px;
+      height: 16px;
+      box-shadow: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      // border: none !important;
+    }
+  }
+}

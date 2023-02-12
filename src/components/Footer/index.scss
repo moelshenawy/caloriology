@@ -1,0 +1,76 @@
+footer {
+  background: url(../../assets/images/bg.png) no-repeat center center;
+  background-size: cover;
+  padding-bottom: 80px;
+
+  @media screen and (max-width: 992px) {
+    padding-top: 0px;
+  }
+
+  #footer {
+    margin-bottom: 0;
+
+    svg {
+      width: 36.37px;
+      height: 36.37px;
+
+      @media screen and (max-width: 992px) {
+        width: 26px;
+        height: 26px;
+      }
+    }
+    .caloriology-footer {
+      font-family: "Freestyle Script", sans-serif;
+      color: var(--sec-color);
+      text-decoration: none;
+      font-weight: 400px;
+      font-size: 35px;
+      line-height: 41px;
+      letter-spacing: 0.02em;
+      border: 0.2 solid #7bb569;
+      position: relative;
+      @media screen and (max-width: 992px) {
+        font-size: 25px;
+      }
+    }
+    .caloriology-footer:hover {
+      color: #7bb569;
+    }
+
+    .footer-span {
+      position: absolute;
+      font-family: "Russo One";
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: -0.015em;
+      color: #1e1e1e;
+      top: 30px;
+      left: 0;
+      @media screen and (max-width: 992px) {
+        font-size: 9px;
+      }
+    }
+    .footer-links {
+      text-decoration: none;
+      color: #1e1e1e;
+    }
+
+    .footer-links:hover {
+      color: #1e1e1e;
+    }
+
+    .footer-calc {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: #7bb569;
+      color: #f9f9f9;
+      border-radius: 10px;
+      border: none;
+      margin-top: 32px;
+    }
+  }
+}

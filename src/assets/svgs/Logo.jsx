@@ -1,0 +1,12 @@
+import React from 'react'
+
+export default function Logo() {
+  return (
+    <svg  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className='mx-1 logo'>
+<path d="M14.5 31C14.5 31 16.15 24.1415 20 20" stroke="#7BB569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.6745 11.2751L28.3601 18.4067C28.8056 23.0322 25.337 27.1517 20.7115 27.5954C16.174 28.0317 12.0618 24.7152 11.6255 20.1759C11.4155 17.9966 12.0798 15.8232 13.4723 14.1337C14.8647 12.4443 16.8712 11.3771 19.0505 11.1669L26.6533 10.4336C26.7758 10.4217 26.8994 10.4341 27.017 10.4701C27.1347 10.5061 27.2441 10.5649 27.3389 10.6433C27.4338 10.7216 27.5123 10.8179 27.5699 10.9266C27.6274 11.0354 27.663 11.1544 27.6745 11.2769V11.2751Z" stroke="#7BB569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.0001 38.3333C30.1256 38.3333 38.3334 30.1255 38.3334 20C38.3334 9.87446 30.1256 1.66663 20.0001 1.66663C9.87458 1.66663 1.66675 9.87446 1.66675 20C1.66675 30.1255 9.87458 38.3333 20.0001 38.3333Z" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+  )
+}

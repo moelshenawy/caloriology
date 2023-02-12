@@ -1,0 +1,110 @@
+#calc {
+  background-color: #7bb569;
+  color: #f9f9f9;
+  .calc-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 85px;
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+      padding: 24px 41px;
+    }
+
+    .calc-svg {
+      svg {
+        margin-right: 40px;
+        margin-left: 30px;
+        @media screen and (max-width: 992px) {
+          width: 24px;
+          height: 32px;
+
+          margin-right: 0;
+          margin-left: 0;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    .text-container {
+      margin-right: 283px;
+
+      @media screen and (max-width: 1200px) {
+        margin-right: 0px;
+      }
+      @media screen and (max-width: 992px) {
+        text-align: center;
+        width: 280px;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
+
+      h3 {
+        font-family: "Russo One";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+        color: #fbfbfb;
+
+        @media screen and (max-width: 992px) {
+          font-size: 20px;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #fbfbfb;
+
+        @media screen and (max-width: 992px) {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+
+    .calc-btn {
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
+      button {
+        width: 210px;
+        height: 65px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        border: none;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #7bb569;
+
+        @media screen and (max-width: 992px) {
+          width: 178px;
+          height: 60px;
+
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        @media screen and (max-width: 450px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
