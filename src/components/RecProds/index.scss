@@ -99,8 +99,6 @@
             button {
               width: 208px;
               height: 53px;
-              background-color: transparent;
-              color: var(--sec-color);
               border-radius: 10px;
               border: 1px solid var(--sec-color);
               font-weight: 600;
@@ -108,6 +106,10 @@
               line-height: 27px;
               transition: all 0.3s ease;
               margin-right: 16px;
+
+              background-color: var(--sec-color);
+              color: #f9f9f9;
+
               @media screen and (max-width: 992px) {
                 width: 150px;
                 height: 48px;
@@ -121,8 +123,8 @@
                 width: 100px;
               }
               &:hover {
-                background-color: var(--sec-color);
-                color: #f9f9f9;
+                background-color: transparent;
+                color: var(--sec-color);
               }
             }
           }

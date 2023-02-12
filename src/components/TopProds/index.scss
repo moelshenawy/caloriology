@@ -70,8 +70,9 @@
             button {
               width: 208px;
               height: 53px;
-              background-color: transparent;
-              color: var(--sec-color);
+
+              background-color: var(--sec-color);
+              color: #f9f9f9;
               border-radius: 10px;
               border: 1px solid var(--sec-color);
               font-weight: 600;
@@ -92,8 +93,8 @@
                 width: 100px;
               }
               &:hover {
-                background-color: var(--sec-color);
-                color: #f9f9f9;
+                background-color: transparent;
+                color: var(--sec-color);
               }
             }
           }

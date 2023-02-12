@@ -53,9 +53,9 @@ export default function RecProds() {
 
                   <div className="btns-container d-flex">
                     <div className="learn-btn">
-                      <Link to={`video-details/${product.id}`}>
+                      <a href={`/video-details/${product.id}`}>
                         <button className='learn-btn'>Watch</button>
-                      </Link>
+                      </a>
                     </div>
                     <div className="icon-container" onClick={() => addToFavorite(product)}>
                       {favVideos?.filter((item) => item.id === product.id)[0] ? <LikeFill /> : <Like />}

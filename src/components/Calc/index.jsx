@@ -1,6 +1,7 @@
 import React from 'react'
 import { Calculator } from '../../assets/svgs';
 import './index.scss'
+import { Link } from 'react-router-dom';
 
 
 const Calc = () => {
@@ -10,17 +11,17 @@ const Calc = () => {
       <section id='calc' >
         <div className="container">
           <div className="calc-section ">
-            <div className="calc-svg">
+            <Link to='/food-calc' className="calc-svg">
               <Calculator />
-            </div>
+            </Link>
 
             <div className="text-container ">
               <h3>Calorie Calculator</h3>
               <p>The calorie calculator can be used to estimate the number of calories  a person needs to consume each day.</p>
             </div>
-            <div className="calc-btn ">
+            <Link to='/food-calc' className="calc-btn ">
               <button  >Calories Calculator </button>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
