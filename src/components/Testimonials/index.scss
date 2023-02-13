@@ -75,6 +75,15 @@
         }
       }
     }
+
+    .rec-pagination {
+      margin-top: 32px;
+
+      @media screen and (max-width: 992px) {
+        margin-top: 44px;
+      }
+    }
+
     .rec-dot {
       background-color: #d9d9d9;
       width: 8px;
