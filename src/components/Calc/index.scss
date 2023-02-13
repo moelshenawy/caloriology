@@ -110,4 +110,200 @@
       }
     }
   }
+
+  #calculator {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @media screen and (max-width: 992px) {
+      padding: 20px;
+      flex-direction: column;
+    }
+
+    .icon-container {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      cursor: pointer;
+
+      @media screen and (max-width: 992px) {
+        top: 20px;
+        right: 20px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+        color: #1e1e1e;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .age,
+      .gender,
+      .height,
+      .weight {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 398px;
+
+        @media screen and (max-width: 992px) {
+          width: 100%;
+        }
+
+        label {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 36px;
+          color: #1e1e1e;
+
+          @media screen and (max-width: 992px) {
+            font-size: 16px;
+          }
+        }
+
+        input {
+          width: 257px;
+          height: 40px;
+          border: 1px solid #1e1e1e;
+          border-radius: 5px;
+          padding: 6px;
+
+          @media screen and (max-width: 992px) {
+            width: 180px;
+          }
+        }
+        span {
+          position: absolute;
+          top: 6px;
+          right: 6px;
+
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 30px;
+          color: rgba(50, 50, 50, 0.5);
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
+
+      .gender {
+        label {
+          @media screen and (max-width: 992px) {
+            margin-right: 60px;
+          }
+          @media screen and (max-width: 450px) {
+            margin-right: 15px;
+          }
+        }
+        .male,
+        .female {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            margin-right: 10px;
+          }
+        }
+
+        .male {
+          margin-right: 34px;
+          @media screen and (max-width: 450px) {
+            margin-right: 15px;
+          }
+        }
+
+        .check-container {
+        }
+
+        .gender-type {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+          color: #1e1e1e;
+          @media screen and (max-width: 992px) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .btns-container {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        .calc {
+          margin-right: 16px;
+          button {
+            width: 144px;
+            height: 48px;
+            background: #7bb569;
+            border-radius: 10px;
+            border: none;
+
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #fbfbfb;
+          }
+        }
+        .clear {
+          button {
+            width: 108px;
+            height: 48px;
+            background: #9b9b9b;
+            border-radius: 10px;
+            border: none;
+
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #fbfbfb;
+          }
+        }
+      }
+    }
+
+    .result {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+      color: #1e1e1e;
+      @media screen and (max-width: 992px) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      span {
+      }
+    }
+  }
 }

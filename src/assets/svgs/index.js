@@ -15,4 +15,6 @@ export { default as CloseSign } from "./CloseSign";
 export { default as BackSign } from "./BackSign";
 export { default as Sort } from "./Sort";
 export { default as Check } from "./Check";
+export { default as CheckedRadio } from "./CheckedRadio";
+export { default as CheckRadio } from "./CheckRadio";
 export { default as LikeFill } from "./LikeFill";
