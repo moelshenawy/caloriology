@@ -11,13 +11,19 @@ const Calc = () => {
   const [male, setMale] = useState(false)
   const [female, setFemale] = useState(false)
 
+  const [calories, setCalories] = useState({
+    age: "",
+    height: "",
+    weight: "",
+  });
+
 
   const changeFemale = () => {
     if (male === true) {
       setMale(false)
-
     }
     setFemale((prev) => !prev)
+
   }
 
   const changeMale = () => {
@@ -25,12 +31,27 @@ const Calc = () => {
       setFemale(false)
     }
     setMale((prev) => !prev)
+
   }
+
+
+  const getCalories = (e) => {
+    let userCalories = { ...calories };
+    userCalories[e.target.name] = e.target.value;
+    setCalories(userCalories);
+  };
+
+
+
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    // Logic
+  };
 
 
   return (
     <>
-
       <section id='calc' className={`${showCalc && 'pb-5'}`}>
         <div className="container">
           <div className="calc-section ">
@@ -57,15 +78,16 @@ const Calc = () => {
                 <GrClose />
               </div>
 
-              <form action="">
+              <form action="" onClick={submitForm}>
                 <div className="age">
-                  <label htmlFor="">Age</label>
-                  <input type="text" placeholder='25' />
+                  <label htmlFor="age">Age</label>
+                  <input name='age' onChange={getCalories}
+                    type="text" placeholder='25' />
                   <span>cm</span>
                 </div>
 
                 <div className="gender">
-                  <label htmlFor="">Gender</label>
+                  <label htmlFor="gender">Gender</label>
                   <div className="male" onClick={changeMale}>
                     {male ? <CheckedRadio /> : <CheckRadio />}
                     <div className='gender-type'>Male</div>
@@ -80,14 +102,16 @@ const Calc = () => {
                 </div>
 
                 <div className="height">
-                  <label htmlFor="">Height</label>
-                  <input type="text" placeholder='180' />
+                  <label htmlFor="height">Height</label>
+                  <input name='height' onChange={getCalories}
+                    type="text" placeholder='180' />
                   <span>cm</span>
                 </div>
 
                 <div className="weight">
-                  <label htmlFor="">Weight</label>
-                  <input type="text" placeholder='180' />
+                  <label htmlFor="weight">Weight</label>
+                  <input name='weight' onChange={getCalories}
+                    type="text" placeholder='180' />
                   <span>cm</span>
                 </div>
 
@@ -100,6 +124,7 @@ const Calc = () => {
                     <button>Clear</button>
                   </div>
                 </div>
+
               </form>
 
               <div className="result"> <span>2000</span> Calories</div>
@@ -107,7 +132,6 @@ const Calc = () => {
           }
         </div>
       </section>
-
     </>
   )
 }

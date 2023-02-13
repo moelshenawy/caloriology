@@ -8,7 +8,7 @@
     width: 100%;
     height: 649px;
     @media screen and (max-width: 992px) {
-      height: 500px;
+      height: 550px;
     }
     img {
       width: 100%;
@@ -27,13 +27,15 @@
 
     @media screen and (max-width: 992px) {
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     .img-side {
       position: relative;
-      @media screen and (max-width: 992px) {
-        display: none;
-      }
       .icon-container {
         position: absolute;
         right: 158px;
@@ -41,13 +43,27 @@
         width: fit-content;
         height: 547px;
         z-index: -1;
+
+        @media screen and (max-width: 992px) {
+          width: 123px;
+          right: 74px;
+          top: -200px;
+        }
+
         svg {
+          width: 100%;
+          height: 100%;
         }
       }
 
       .img-container {
         width: 591px;
         height: 547px;
+
+        @media screen and (max-width: 992px) {
+          width: 253px;
+          height: 234px;
+        }
 
         img {
           width: 100%;
@@ -65,21 +81,35 @@
         font-size: 40px;
         letter-spacing: 0.025em;
         color: var(--sec-color);
+
+        @media screen and (max-width: 992px) {
+          display: none;
+        }
       }
       h3 {
         font-family: "Russo One";
         font-weight: 400;
         font-size: 70px;
+        line-height: 84px;
 
         @media screen and (max-width: 992px) {
-          font-size: 60px;
+          margin-top: 16px;
+          margin-bottom: 16px;
+          font-size: 24px;
+          line-height: 29px;
         }
       }
       p {
+        font-family: "Poppins";
+        font-style: normal;
         font-weight: 500;
         font-size: 30px;
+        line-height: 45px;
+        color: #1e1e1e;
         @media screen and (max-width: 992px) {
-          font-size: 20px;
+          font-size: 18px;
+          line-height: 27px;
+          color: #1e1e1e;
         }
       }
       button {
@@ -97,6 +127,15 @@
         font-size: 20px;
         line-height: 30px;
         color: #fbfbfb;
+
+        @media screen and (max-width: 992px) {
+          width: 143px;
+          height: 40px;
+          padding: 8px 24px;
+
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
   }
@@ -109,13 +148,20 @@
     .certificates-title {
       margin-bottom: 90px;
       @media screen and (max-width: 992px) {
-        text-align: center;
+        margin-bottom: 24px;
       }
+
       h2 {
         font-family: "Russo One";
-        font-weight: 400;
+        font-style: normal;
+        font-weight: 700;
         font-size: 40px;
-        margin-bottom: 5px;
+        line-height: 60px;
+
+        @media screen and (max-width: 992px) {
+          font-size: 24px;
+          line-height: 36px;
+        }
       }
     }
 
@@ -129,6 +175,7 @@
 
         @media screen and (max-width: 992px) {
           flex-direction: column-reverse;
+          align-items: center;
         }
 
         .img-container {
@@ -139,7 +186,8 @@
             height: 500px;
           }
           @media screen and (max-width: 450px) {
-            height: 350px;
+            width: 358px;
+            height: 277px;
           }
 
           img {
@@ -155,6 +203,11 @@
           @media screen and (max-width: 1200px) {
             margin-left: 60px;
             margin-right: 60px;
+          }
+
+          @media screen and (max-width: 992px) {
+            margin-right: auto;
+            margin-left: 0;
           }
           h5 {
             font-family: "Poppins";

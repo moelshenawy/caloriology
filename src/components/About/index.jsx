@@ -29,7 +29,7 @@ const About = () => {
       animation.start({ x: '-100vw' })
     }
 
-  }, [inView] );
+  }, [inView]);
 
 
 
@@ -70,7 +70,7 @@ const About = () => {
           <div className="boxes-container">
             <div className='box'>
               <div className="img-container">
-                <img src={cert1} alt="" className='w-100' />
+                <img src={cert1} alt="" />
               </div>
               <div className="text-container">
                 <h5>Personal Trainer </h5>
@@ -81,12 +81,12 @@ const About = () => {
                 <h5 >Specialist in Sport Nutrition</h5>
               </div>
               <div className="img-container">
-                <img src={cert2} alt="" className='w-100' />
+                <img src={cert2} alt="" />
               </div>
             </div>
             <div className="box">
               <div className="img-container">
-                <img src={cert3} alt="" className='w-100' />
+                <img src={cert3} alt="" />
               </div>
               <div className="text-container">
                 <h5 >Online Coaching</h5>
@@ -97,7 +97,7 @@ const About = () => {
                 <h5 className='ms-0'>Transformation Specialist</h5>
               </div>
               <div className="img-container">
-                <img src={cert4} alt="" className='w-100' />
+                <img src={cert4} alt="" />
               </div>
             </div>
             <div className="box">
