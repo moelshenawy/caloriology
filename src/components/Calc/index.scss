@@ -79,11 +79,12 @@
 
       text-decoration: none;
       button {
-        width: 210px;
-        height: 65px;
+        width: 194px;
+        height: 48px;
         background-color: #f9f9f9;
         border-radius: 10px;
         border: none;
+        padding: 12px 32px;
 
         display: flex;
         flex-direction: row;
@@ -219,6 +220,10 @@
           font-size: 20px;
           line-height: 30px;
           color: rgba(50, 50, 50, 0.5);
+
+          @media screen and (max-width: 450px) {
+            top: 3px;
+          }
         }
       }
 

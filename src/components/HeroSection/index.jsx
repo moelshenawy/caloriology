@@ -33,7 +33,6 @@ const Hero = () => {
     <>
 
       <section id="hero" ref={ref}>
-
         <div className="bg-container">
           <img src={bg} alt="" />
         </div>
@@ -61,16 +60,16 @@ const Hero = () => {
                 transitionMs={700}
               >
                 <div>
-                  <h2>Keep Your Body At Its Best</h2>
+                  <h2>Keep Your <br /> Body At Its Best.</h2>
                   <Decoration renderArrow={false} />
-                  <p className='Hero-text'>Calories are like tiny terrorists that invade  your body and make you fat.
-                    We help you calculate the calories to reach  your body goal.</p>
+                  <p className='Hero-text'>Calories are like tiny terrorists that invade <br /> your body and make you fat. <br />
+                    We help you calculate the calories to reach <br />  your body goal.</p>
                 </div>
                 <div>
                   <h2>Keep Your Body At Its Best</h2>
                   <Decoration renderArrow={false} />
                   <p className='Hero-text'>Calories are like tiny terrorists that invade  your body and make you fat.
-                    We help you calculate the calories to reach  your body goal.</p>
+                    We help you calculate the calories to reach   your body goal.</p>
                 </div>
                 <div>
                   <h2>Keep Your Body At Its Best</h2>

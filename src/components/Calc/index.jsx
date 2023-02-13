@@ -64,7 +64,7 @@ const Calc = () => {
               <p>The calorie calculator can be used to estimate the number of calories  a person needs to consume each day.</p>
             </div>
             <div className="calc-btn ">
-              <button onClick={() => setShowCalc((prev) => !prev)}>Calories Calculator </button>
+              <button onClick={() => setShowCalc((prev) => !prev)}> Calculate </button>
             </div>
           </div>
 
