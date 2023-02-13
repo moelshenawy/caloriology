@@ -153,6 +153,8 @@
           align-items: center;
           justify-content: center;
           margin-right: 14px;
+          cursor: pointer;
+
           @media screen and (max-width: 992px) {
             width: 30px;
             height: 30px;
@@ -174,6 +176,8 @@
           align-items: center;
           justify-content: center;
           margin-right: 30px;
+          cursor: pointer;
+
           @media screen and (max-width: 992px) {
             width: 30px;
             height: 30px;

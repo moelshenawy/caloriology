@@ -18,3 +18,4 @@ export { default as Check } from "./Check";
 export { default as CheckedRadio } from "./CheckedRadio";
 export { default as CheckRadio } from "./CheckRadio";
 export { default as LikeFill } from "./LikeFill";
+export { default as English } from "./English";

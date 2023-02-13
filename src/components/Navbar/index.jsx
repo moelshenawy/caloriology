@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import './index.scss'
-import { Arabic, DownArrow, Logo } from '../../assets/svgs'
+import { Arabic, English, DownArrow, Logo } from '../../assets/svgs'
 import Search from '../../assets/svgs/Search'
 import { images } from '../../assets/constants'
 import { useState } from 'react'
@@ -11,10 +11,11 @@ import { motion } from 'framer-motion';
 
 
 import { useTranslation } from 'react-i18next';
-import { dir } from 'i18next'
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false)
+  // For Searching
+  const [searchInput, setSearchInput] = useState(false)
 
   const { t, i18n } = useTranslation();
   console.log(t("navbar.home"))
@@ -69,7 +70,7 @@ export default function Navbar() {
               {i18n.language === 'ar' ? <div onClick={() => {
                 i18n.changeLanguage('en')
               }} className="lang-btn">
-                En
+                <English />
               </div> : <div onClick={() => {
                 i18n.changeLanguage('ar')
               }} className="lang-btn">
