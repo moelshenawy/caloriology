@@ -32,9 +32,11 @@
         border: 0.2 solid #7bb569;
         position: relative;
         margin-right: 0;
+        
 
         @media screen and (max-width: 992px) {
           font-size: 25px;
+
         }
 
         .calc-span {
@@ -50,6 +52,7 @@
 
           @media screen and (max-width: 992px) {
             font-size: 9px;
+            top :30px;
           }
         }
       }

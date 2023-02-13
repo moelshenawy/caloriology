@@ -6,6 +6,8 @@ import Carousel from 'react-elastic-carousel'
 import './index.scss'
 import { Link } from 'react-router-dom';
 import { appContext } from './../../Context/Store';
+import { useTranslation } from 'react-i18next';
+
 
 
 export default function RecProds() {
@@ -26,6 +28,8 @@ export default function RecProds() {
   const { food } = images;
 
   const recProd = data.recProd;
+  const { t, i18n } = useTranslation();
+
 
 
 
@@ -33,8 +37,9 @@ export default function RecProds() {
   return (
     <>
       <section id='recently-added'>
-        <div className="container">
-          <h3>Recently Added</h3>
+        <div className="container"
+        dir={`${i18n.language === "ar" ? "rtl" : "ltr"}`}>
+          <h3>{t('recProd.title')}</h3>
           <div className="row recent-wrap">
             <Carousel breakPoints={breakPoints} pagination={true} >
               {recProd.map((product, index) => (

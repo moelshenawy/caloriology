@@ -5,6 +5,8 @@ import { images } from '../../assets/constants';
 import Carousel from 'react-elastic-carousel'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
+
 
 const Hero = () => {
   const { bg, food4 } = images;

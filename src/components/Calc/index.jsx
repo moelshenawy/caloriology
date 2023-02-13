@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 import { CheckedRadio, CheckRadio } from '../../assets/svgs'
 import { motion } from 'framer-motion';
 import { GrClose } from 'react-icons/gr'
+import { useTranslation } from 'react-i18next';
+
 
 const Calc = () => {
   const [showCalc, setShowCalc] = useState(false)
   const [male, setMale] = useState(false)
   const [female, setFemale] = useState(false)
+  const { t, i18n } = useTranslation();
 
   const [calories, setCalories] = useState({
     age: "",
@@ -54,17 +57,18 @@ const Calc = () => {
     <>
       <section id='calc' className={`${showCalc && 'pb-5'}`}>
         <div className="container">
-          <div className="calc-section ">
+          <div className="calc-section "
+            dir={`${i18n.language ==="ar" ? "rtl" : "ltr"}`}>
             <Link to='/food-calc' className="calc-svg">
               <Calculator />
             </Link>
 
             <div className="text-container ">
-              <h3>Calorie Calculator</h3>
-              <p>The calorie calculator can be used to estimate the number of calories  a person needs to consume each day.</p>
+              <h3>{t('calcsec.calorieCalc')}</h3>
+              <p>{t('calcsec.desc')}</p>
             </div>
             <div className="calc-btn ">
-              <button onClick={() => setShowCalc((prev) => !prev)}> Calculate </button>
+              <button onClick={() => setShowCalc((prev) => !prev)}> {t('calcsec.calculate')} </button>
             </div>
           </div>
 

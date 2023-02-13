@@ -6,6 +6,8 @@ import Carousel from 'react-elastic-carousel'
 import './index.scss'
 import { Link } from 'react-router-dom';
 import { appContext } from './../../Context/Store';
+import { useTranslation } from 'react-i18next';
+
 
 
 export default function TopProds() {
@@ -24,13 +26,16 @@ export default function TopProds() {
 
   const { food } = images;
   const topProd = data.topProd
+  const { t, i18n } = useTranslation();
+
 
 
   return (
     <>
       <section className='top-rated'>
-        <div className="container">
-          <h3>Top Rated</h3>
+        <div className="container"
+        dir={`${i18n.language === "ar" ? "rtl" : "ltr"}`}>
+          <h3>{t('topProds.title')}</h3>
           <div className="row top-wrap">
             <Carousel breakPoints={breakPoints} itemsToShow={4} pagination={true}>
 

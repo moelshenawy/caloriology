@@ -81,7 +81,7 @@ export default function Navbar() {
             </div>
 
             <div className="calc-btn-desktop">
-              <Link className="nav-link" to="#"><button className='calc'>Food Calculator</button></Link>
+              <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
                   <li className="nav-item"
                     ref={menuRef}
                   >
-                    <a className="nav-link" onClick={() => setShowMenu((prev) => !prev)}>Categories
+                    <a className="nav-link" onClick={() => setShowMenu((prev) => !prev)}>{t('navbar.categories')}
                       <span className={`ps-2 ${showMenu && "active-menu"}`} >
                         <DownArrow />
                       </span>
@@ -105,10 +105,10 @@ export default function Navbar() {
 
                   </li>
                   <li className="nav-item ">
-                    <NavLink activeClassName="active" className="nav-link  " to="favorites">Favorites</NavLink>
+                    <NavLink activeClassName="active" className="nav-link  " to="favorites">{t('navbar.favorites')}</NavLink>
                   </li>
                   <li className="nav-item ">
-                    <NavLink activeClassName="active" className="nav-link  " to="about">About us</NavLink>
+                    <NavLink activeClassName="active" className="nav-link  " to="about">{t('navbar.about')}</NavLink>
                   </li>
 
                 </ul>
@@ -117,7 +117,7 @@ export default function Navbar() {
 
               </div>
               <div className="calc-btn-mob">
-                <Link className="nav-link" to="#"><button className='calc'>Food Calculator</button></Link>
+                <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
               </div>
             </div>
           </div>

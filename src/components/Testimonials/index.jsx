@@ -4,9 +4,11 @@ import { images } from "../../assets/constants"
 import { Qoutes } from "../../assets/svgs"
 import './index.scss'
 import Carousel from 'react-elastic-carousel'
+import { useTranslation } from 'react-i18next'
 
 
 export default function Testimonials() {
+  const { t, i18n } = useTranslation();
 
   const [breakPoints] = useState([
     { width: 1, itemsToShow: 1, },
@@ -74,8 +76,9 @@ export default function Testimonials() {
   return (
     <>
       <section id='clients'>
-        <div className="container py-5">
-          <h4>What Clients Say</h4>
+        <div className="container py-5"
+        dir={`${i18n.language === "ar" ? "rtl": "ltr"}`}>
+          <h4>{t('testimonials.title')}</h4>
           <div className="row test-wrap justify-content-center-align-items-center mt-4 ">
             <Carousel breakPoints={breakPoints} itemsToShow={3} pagination={true}
             >

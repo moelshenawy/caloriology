@@ -2,6 +2,23 @@
   "navbar": {
     "home": "Home",
     "about": "About us",
-    "favorites": "Favorites"
+    "favorites": "Favorites",
+    "categories": "Categories",
+    "food": "Food Calculator"
+  },
+  "calcsec": {
+    "calorieCalc": "Calorie Calculator",
+    "desc": "The calorie calculator can be used to estimate the number of calories a person needs to consume each day.",
+    "calculate": "Calculate"
+  },
+  "recProd": {
+    "title" : "Recently Added"
+  },
+  "topProds": {
+    "title": "Top Rated"
+  },
+  
+  "testimonials": {
+    "title" : "What Clients Say"
   }
 }
