@@ -147,12 +147,18 @@
         border-radius: 200px;
         border: none;
         position: relative;
+        border: 1px solid var(--sec-color);
+
         @media screen and (max-width: 992px) {
           width: 100%;
         }
 
         @media screen and (max-width: 450px) {
           width: 140px;
+        }
+
+        &:focus {
+          border: 1px solid var(--sec-color) !important;
         }
       }
       svg {
