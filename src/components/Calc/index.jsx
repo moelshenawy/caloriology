@@ -83,6 +83,7 @@ const Calc = () => {
               </div>
 
               <form action="" onClick={submitForm}>
+                
                 <div className="age">
                   <label htmlFor="age">Age</label>
                   <input name='age' onChange={getCalories}

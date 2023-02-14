@@ -71,12 +71,21 @@ export default function Navbar() {
 
             <div className="icons-container">
               {searchInput === true ? (
-                <div className="search-input">
-                  <input type="text" className='search-inp' name="" id="" />
+                <motion.div
+                animate={{          
+                  scale:[0,1]
+                 }}
+              transition={{ duration: 0.85, ease: "easeOut" }}
+                className="search-input">
+                  <input
+                                  
+                  
+
+                  type="text" className='search-inp' name="" id="" />
                   <div onClick={() => setSearchInput(!searchInput)}>
                     <Search />
                   </div>
-                </div>
+                </motion.div>
               ) : <div className="search-btn" onClick={() => setSearchInput(!searchInput)}>
                 <Search />
               </div>}

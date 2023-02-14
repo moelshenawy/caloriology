@@ -140,6 +140,7 @@
       justify-content: flex-end;
       margin-right: 10px;
       position: relative;
+
       input {
         width: 419px;
         height: 32px;
@@ -148,9 +149,8 @@
         box-shadow: 4px 4px 20px rgba(134, 130, 130, 0.3);
         border-radius: 200px;
         border: none;
-        position: relative;
         border: 1px solid var(--sec-color);
-
+        padding-left: 15px;
         @media screen and (max-width: 992px) {
           width: 100%;
         }
@@ -159,8 +159,10 @@
           width: 140px;
         }
 
-        &:focus {
-          background-color: red;
+        &:focus{
+          // border: none;
+          outline: none !important;
+
         }
       }
       svg {
