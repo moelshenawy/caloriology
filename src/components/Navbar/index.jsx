@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false)
+
   // For Searching
   const [searchInput, setSearchInput] = useState(false)
 
