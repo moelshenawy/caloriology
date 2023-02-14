@@ -19,12 +19,12 @@ export default function Navbar() {
   const [searchInput, setSearchInput] = useState(false)
 
   const { t, i18n } = useTranslation();
-  
+
 
 
 
   const menuRef = useRef()
-  
+
 
   // Toggle outside to close menu
   useEffect(() => {
@@ -46,93 +46,96 @@ export default function Navbar() {
     <>
       <nav id='navbar' className='navbar navbar-expand-lg sticky-top'>
         <div className="container ">
-          <button
-            className="burger-btn navbar-toggler text-secondary "
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#main"
-            aria-controls="main"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+
+          {searchInput === false &&
+            <button
+              className="burger-btn navbar-toggler text-secondary "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#main"
+              aria-controls="main"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          }
 
           <div className="logo ">
             <Logo />
             <Link className="navbar-brand" to="/">Caloriology<br /> <span className='calc-span'>Food Calories</span></Link>
           </div>
 
-          
-            <div className="btns-container d-flex align-items-center justify-content-center">
-          
-          <div className="icons-container">
-          {searchInput === true ? (
-            <div className="input-group ">
-              <input type="text" className='search-inp' name="" id=""  />
-              <div  onClick={()=> setSearchInput(!searchInput)}>
-                <Search  />
-              </div>
+
+          <div className="btns-container d-flex align-items-center justify-content-center">
+
+            <div className="icons-container">
+              {searchInput === true ? (
+                <div className="input-group ">
+                  <input type="text" className='search-inp' name="" id="" />
+                  <div onClick={() => setSearchInput(!searchInput)}>
+                    <Search />
+                  </div>
                 </div>
-          ): <div className="search-btn" onClick={()=> setSearchInput(!searchInput)}>
-          <Search  />
-        </div>}
-          
+              ) : <div className="search-btn" onClick={() => setSearchInput(!searchInput)}>
+                <Search />
+              </div>}
 
-            {i18n.language === 'ar' ? <div onClick={() => {
-              i18n.changeLanguage('en')
-            }} className="lang-btn">
-              <English />
-            </div> : <div onClick={() => {
-              i18n.changeLanguage('ar')
-            }} className="lang-btn">
-              <Arabic />
 
-            </div>}
+              {i18n.language === 'ar' ? <div onClick={() => {
+                i18n.changeLanguage('en')
+              }} className="lang-btn">
+                <English />
+              </div> : <div onClick={() => {
+                i18n.changeLanguage('ar')
+              }} className="lang-btn">
+                <Arabic />
 
+              </div>}
+
+            </div>
+
+            <div className="calc-btn-desktop">
+              <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
+            </div>
           </div>
+          {searchInput === true ? "" : <div className="collapse navbar-collapse align-items-center justify-content-center" id="main">
 
-          <div className="calc-btn-desktop">
-            <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
-          </div>
-        </div>
-            {searchInput === true ? "":   <div className="collapse navbar-collapse align-items-center justify-content-center" id="main">
+            <div className="toggle-menu my-3"
+              dir={`${i18n.language === "ar" ? 'rtl' : 'ltr'}`} >
+              <div className="links">
+                <ul className="navbar-nav ">
+                  <li className="nav-item ">
+                    <NavLink activeClassName="active" className="nav-link " aria-current="page" to="/">{t('navbar.home')}</NavLink>
+                  </li>
+                  <li className="nav-item"
+                    ref={menuRef}
+                  >
+                    <a className="nav-link" onClick={() => setShowMenu((prev) => !prev)}>{t('navbar.categories')}
+                      <span className={`ps-2 ${showMenu && "active-menu"}`} >
+                        <DownArrow />
+                      </span>
+                    </a>
 
-<div className="toggle-menu my-3"
-  dir={`${i18n.language === "ar" ? 'rtl' : 'ltr'}`} >
-  <div className="links">
-    <ul className="navbar-nav ">
-      <li className="nav-item ">
-        <NavLink activeClassName="active" className="nav-link " aria-current="page" to="/">{t('navbar.home')}</NavLink>
-      </li>
-      <li className="nav-item"
-        ref={menuRef}
-      >
-        <a className="nav-link" onClick={() => setShowMenu((prev) => !prev)}>{t('navbar.categories')}
-          <span className={`ps-2 ${showMenu && "active-menu"}`} >
-            <DownArrow />
-          </span>
-        </a>
+                  </li>
+                  <li className="nav-item ">
+                    <NavLink activeClassName="active" className="nav-link  " to="favorites">{t('navbar.favorites')}</NavLink>
+                  </li>
+                  <li className="nav-item ">
+                    <NavLink activeClassName="active" className="nav-link  " to="about">{t('navbar.about')}</NavLink>
+                  </li>
 
-      </li>
-      <li className="nav-item ">
-        <NavLink activeClassName="active" className="nav-link  " to="favorites">{t('navbar.favorites')}</NavLink>
-      </li>
-      <li className="nav-item ">
-        <NavLink activeClassName="active" className="nav-link  " to="about">{t('navbar.about')}</NavLink>
-      </li>
-
-    </ul>
+                </ul>
 
 
 
-  </div>
-  <div className="calc-btn-mob">
-    <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
-  </div>
-</div>
-</div>}
-        {/* <div className="collapse navbar-collapse align-items-center justify-content-center" id="main">
+              </div>
+              <div className="calc-btn-mob">
+                <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
+              </div>
+            </div>
+          </div>}
+          {/* <div className="collapse navbar-collapse align-items-center justify-content-center" id="main">
 
 <div className="toggle-menu my-3"
   dir={`${i18n.language === "ar" ? 'rtl' : 'ltr'}`} >
