@@ -71,7 +71,7 @@ export default function Navbar() {
 
             <div className="icons-container">
               {searchInput === true ? (
-                <div className="input-group ">
+                <div className="search-input">
                   <input type="text" className='search-inp' name="" id="" />
                   <div onClick={() => setSearchInput(!searchInput)}>
                     <Search />
