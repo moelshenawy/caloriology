@@ -105,7 +105,7 @@ export default function Navbar() {
             </div>
 
             <div className="calc-btn-desktop">
-              <Link className="nav-link" to="#"><button className='calc'>{t('navbar.food')}</button></Link>
+              <Link className="nav-link" to="food-calculator"><button className='calc'>{t('navbar.food')}</button></Link>
             </div>
           </div>
           {searchInput === true ? "" : <div className="collapse navbar-collapse align-items-center justify-content-center" id="main">

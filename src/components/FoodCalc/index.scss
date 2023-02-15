@@ -1,0 +1,123 @@
+#food-calc {
+    .container {
+        .title {
+            margin-top: 80px;
+            margin-bottom: 40px;
+            h3 {
+                font-family: 'Poppins';
+                font-weight: 600;
+                font-size: 32px;
+                line-height: 48px;
+                margin-bottom: 24px;
+            }
+            p {
+                font-family: 'poppins';
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 30px;
+
+            }
+        }
+        .box-input {
+            background-color: #f8f8f8;
+            padding: 40px;
+            box-shadow: 4px 4px 20px rgba(151, 151, 151, 0.25);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            @media screen and (max-width:450px) {
+                padding: 24px 16px;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .meal , .quantity {
+                    margin-bottom: 28px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 516px;
+                    @media screen and (max-width:992px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        width: 100%;
+                    }
+                    @media screen and (max-width:450px) {
+                        width: 85%;
+                    }
+                    label {
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 36px;
+                        @media screen and (max-width:450px) {
+                            font-size: 20px;
+                        }
+                    }
+                    input {
+                        width: 364px;
+                        height: 40px;
+                        border: 1px solid var(--main-color);
+                        border-radius: 5px;
+                        padding: 15px;
+                        @media screen and (max-width:992px) {
+                            width: 100%;
+                            margin-top: 8px;
+                        }
+                        @media screen and (max-width:450px) {
+                            width: 85%;
+                        }
+                    }
+                }
+                .calc-btn {
+                    button {
+                        margin-top: 62px;
+                        margin-bottom: 40px;
+                        width: 144px;
+                        height: 48px;
+                        background-color: var(--sec-color);
+                        border-radius: 10px;
+                        color: #fbfbfb;
+                        border: none;
+                        padding: 12px 32px;
+                        font-size: 16px;
+                        @media screen and (max-width:992px) {
+                            margin-top: 32px;
+                        }
+                    }
+
+                }
+            }
+        }
+        .values {
+            display: flex;
+            
+            justify-content: space-around;
+            margin-bottom: 146px;
+            @media screen and (max-width:992px) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .calories , .protein , .carbohydrate , .fats , .fiber {
+                @media screen and (max-width:992px) {
+                    text-align: start !important;
+                    margin-bottom: 32px;
+                }
+                h6 {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 36px;
+                    margin-bottom: 24px;
+                    @media screen and (max-width:992px) {
+                        margin-bottom: 8px;
+                    }
+                }
+                p {
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+}
