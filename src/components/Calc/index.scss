@@ -166,7 +166,8 @@
       .age,
       .gender,
       .height,
-      .weight {
+      .weight,
+      .activity {
         margin-bottom: 24px;
         display: flex;
         align-items: center;
@@ -194,12 +195,14 @@
           }
         }
 
-        input {
+        input,
+        select {
           width: 257px;
           height: 40px;
           border: 1px solid #1e1e1e;
           border-radius: 5px;
           padding: 6px;
+          font-size: 16px;
 
           @media screen and (max-width: 992px) {
             width: 180px;
@@ -207,6 +210,16 @@
 
           @media screen and (max-width: 450px) {
             height: 35px;
+          }
+
+          &[type="number"] {
+            -moz-appearance: textfield;
+          }
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
           }
         }
         span {
