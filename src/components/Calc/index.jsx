@@ -10,13 +10,16 @@ import axios from 'axios'
 import { useEffect } from 'react';
 import Joi from "joi";
 import { use } from 'i18next';
+import { Puff } from 'react-loader-spinner';
 
 const Calc = () => {
   const [showCalc, setShowCalc] = useState(false)
 
   const [male, setMale] = useState(false)
   const [female, setFemale] = useState(false)
-  const [errorList, setErrorList] = useState()
+  const [errorList, setErrorList] = useState([])
+  const [error, setError] = useState([])
+
   const [isLoading, setIsLoading] = useState()
   const [gender, setGender] = useState('')
   const { t, i18n } = useTranslation();
@@ -83,7 +86,8 @@ const Calc = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    // Logic
+
+    setIsLoading(true);
 
     let validationRes = validationForm();
 
@@ -92,7 +96,9 @@ const Calc = () => {
       setErrorList(validationRes.error.details)
       setIsLoading(false);
 
+      setIsLoading(false);
     } else {
+      setIsLoading(true);
       setErrorList([])
 
 
@@ -114,24 +120,45 @@ const Calc = () => {
         }
 
 
-      )
+      ).catch(function (err) {
+        if (err.response) {
+          setIsLoading(false);
+          setError(err.response.data.message)
 
+        }
+      })
       console.log(data)
+
+      if (data.status === 200) {
+        setIsLoading(false)
+      } else {
+        setIsLoading(false);
+      }
     }
-
-
   };
 
-
-
+  console.log(calories)
   console.log(errorList)
+
+
+  const clearForm = () => {
+    setCalories({
+      age: "",
+      height: "",
+      weight: "",
+      userGender: "",
+      activity: ''
+
+    })
+  }
+
   const validationForm = () => {
     let scheme = Joi.object({
       age: Joi.number().min(5).max(80).required(),
       weight: Joi.number().min(40).max(160).required(),
       height: Joi.number().min(130).max(230).required(),
       userGender: Joi.string().required(),
-      activity: Joi.items(["Sedentary: little or no exercise", "Exercise 1-3 times/week", "Exercise 4-5 times/week", "Daily exercise or intense exercise 3-4 times/week"]).required(),
+      activity: Joi.required(),
 
     });
 
@@ -212,7 +239,7 @@ const Calc = () => {
                 <div className="activity" onChange={getCalories}>
                   <label htmlFor="activity">Activity</label>
                   <select name="activity" id="">
-                    <option value="none">Select your weekly activity</option>
+                    <option value="none" disabled>Select your weekly activity</option>
                     <option value="level_1">Sedentary: little or no exercise</option>
                     <option value="level_2">Exercise 1-3 times/week</option>
                     <option value="level_3">Exercise 4-5 times/week</option>
@@ -224,11 +251,28 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit'>Calculate</button>
+                    <button type='submit'>
+                      {isLoading ?
+
+                        <Puff
+                          height="30"
+                          width="30"
+                          radius={1}
+                          color="#fefefe"
+                          ariaLabel="puff-loading"
+                          wrapperStyle={{}}
+                          wrapperClass="align-items-center justify-content-center"
+                          visible={true}
+                        />
+                        :
+                        "Calculate"
+                      }
+
+                    </button>
                   </div>
 
                   <div className="clear">
-                    <button>Clear</button>
+                    <button type='reset' onClick={clearForm}>Clear</button>
                   </div>
                 </div>
 
