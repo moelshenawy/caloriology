@@ -14,7 +14,7 @@ import { Puff } from 'react-loader-spinner';
 
 const Calc = () => {
   const [showCalc, setShowCalc] = useState(false)
-
+  const [showRes , setShowRes] = useState(false)
   const [male, setMale] = useState(false)
   const [female, setFemale] = useState(false)
   const [errorList, setErrorList] = useState([])
@@ -168,7 +168,7 @@ const Calc = () => {
 
   return (
     <>
-      <section id='calc' className={`${showCalc && 'pb-5'}`}>
+      <section id='calc' className={`${showCalc &&   'pb-5'}`}>
         <div className="container">
           <div className="calc-section "
             dir={`${i18n.language === "ar" ? "rtl" : "ltr"}`}>
@@ -191,7 +191,7 @@ const Calc = () => {
               transition={{ duration: 0.85, ease: "easeOut" }}
 
               id='calculator'>
-              <div className="icon-container" onClick={() => setShowCalc(false)}>
+              <div className="icon-container" onClick={() => setShowCalc(false)} >
                 <GrClose />
               </div>
 
@@ -251,7 +251,7 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit'>
+                    <button type='submit' onClick={() => setShowRes((prev) => !prev)} >
                       {isLoading ?
 
                         <Puff
@@ -277,8 +277,57 @@ const Calc = () => {
                 </div>
 
               </form>
+              {showRes &&
+              <div className="result "> 
+              <div className="title">
+                <h4>Result</h4>
+              </div>
+              <div className="result-form">
 
-              <div className="result"> <span>2000</span> Calories</div>
+
+                <div className="maintain-weight">
+                  <div className="text">
+                    <p>Maintain weight</p>
+                  </div>
+                  <div className="weight-result">
+                    <p>2,046</p>
+                    <span>Calories/day</span>
+                  </div>
+                </div>
+
+                <div className="mid-weight-loss">
+                  <div className="text">
+                    <p>Mid weight loss</p>
+                  </div>
+                  <div className="weight-result">
+                    <p>2,046</p>
+                    <span>Calories/day</span>
+                  </div>
+                </div>
+
+                <div className="weight-loss">
+                  <div className="text">
+                    <p>Weight loss</p>
+                  </div>
+                  <div className="weight-result">
+                    <p>2,046</p>
+                    <span>Calories/day</span>
+                  </div>
+                </div>
+
+                <div className="extreme-loss">
+                  <div className="text">
+                    <p>Extreme weight loss</p>
+                  </div>
+                  <div className="weight-result">
+                    <p>2,046</p>
+                    <span>Calories/day</span>
+                  </div>
+                </div>
+              </div>
+              
+              </div>
+}
             </motion.div >
           }
         </div>

@@ -120,8 +120,9 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1200px) {
       padding: 20px;
       flex-direction: column;
     }
@@ -333,20 +334,87 @@
     }
 
     .result {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 36px;
       color: #1e1e1e;
-
-      @media screen and (max-width: 992px) {
-        margin-top: 20px;
-        margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @media screen and (max-width: 1400px) {
+        margin-left: 40px;
       }
-
-      @media screen and (max-width: 992px) {
-        font-size: 20px;
+      @media screen and (max-width: 1200px) {
+        margin-top: 80px;
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        // margin-left: 100px;
+      }
+      .title {
+        h4 {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 42px;
+          margin-bottom: 18px;
+        }
+      }
+      .result-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .maintain-weight,
+        .mid-weight-loss,
+        .weight-loss,
+        .extreme-loss
+        {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 561px;
+          margin-bottom: 18px;
+          @media screen and (max-width: 768px) {
+            width: 300px;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 40px;
+          }
+          .text {
+            p {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+              line-height: 36px;
+            }
+          }
+          .weight-result {
+            display: flex;
+            flex-direction: row;
+            // align-items: center;
+            justify-content: space-between;
+            padding: 8px 16px;
+            width: 265px;
+            height: 52px;
+            border: 1px solid #1E1E1E;
+            border-radius: 5px;
+            p {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 36px;
+            }
+            span {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+              line-height: 36px;
+              color: #828181;
+            }
+          }
+        }
       }
     }
   }
