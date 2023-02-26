@@ -137,7 +137,7 @@ const Calc = () => {
         }
         setDataResult()
       })
-      console.log(data.data)
+      console.log(data.data.data.goals["Extreme weight gain"].calory)
 
       if (data.status === 200) {
         setIsLoading(false)
