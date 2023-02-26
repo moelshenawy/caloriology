@@ -163,20 +163,20 @@ const Calc = () => {
 
 
 
-  const clearForm = () => {
-    setCalories({
-      age: "",
-      height: "",
-      weight: "",
-      userGender: "",
-      activity: ''
+  // const clearForm = () => {
+  //   setCalories({
+  //     // age: "",
+  //     // height: "",
+  //     // weight: "",
+  //     // userGender: "",
+  //     // activity: ''
 
-    })
-    // setMaintainWeight()
-    // setMildWeightLoss()
-    // setWeightLoss()
-    // setExtremeWeightLoss()
-  }
+  //   })
+  //   // setMaintainWeight()
+  //   // setMildWeightLoss()
+  //   // setWeightLoss()
+  //   // setExtremeWeightLoss()
+  // }
 
   const validationForm = () => {
     let scheme = Joi.object({
@@ -298,7 +298,7 @@ const Calc = () => {
                   </div>
 
                   <div className="clear">
-                    <button type='reset' onClick={() => { clearForm(); setShowRes(false) }}>Clear</button>
+                    <button type='reset' onClick={() => {  setShowRes(false) }}>Clear</button>
                   </div>
                 </div>
 
