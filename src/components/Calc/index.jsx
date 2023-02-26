@@ -177,7 +177,7 @@ const Calc = () => {
     return scheme.validate(calories, { abortEarly: false });
   };
 
-  console.log(weight)
+  console.log()
   return (
     <>
       <section id='calc' className={`${showCalc && 'pb-5'}`}>
@@ -304,7 +304,7 @@ const Calc = () => {
                         <p>Maintain weight</p>
                       </div>
                       <div className="weight-result">
-                        <p>2,046</p>
+                        <p>{weight}</p>
                         <span>Calories/day</span>
                       </div>
                     </div>
