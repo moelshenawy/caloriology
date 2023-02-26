@@ -31,6 +31,8 @@ const Calc = () => {
     activity: ''
   });
 
+
+
   const changeFemale = () => {
     if (male === true) {
       setMale(false)
@@ -101,6 +103,11 @@ const Calc = () => {
       setIsLoading(true);
       setErrorList([])
 
+      
+
+
+
+
 
       const data = await axios.get(`https://fitness-calculator.p.rapidapi.com/dailycalorie`,
 
@@ -116,9 +123,10 @@ const Calc = () => {
             "X-RapidAPI-Key": "cf296e0620mshd5824004b4fcfd7p191180jsn58053e2b12fd",
             "X-RapidAPI-Host": 'fitness-calculator.p.rapidapi.com'
           }
-
         }
-
+        
+        
+        
 
       ).catch(function (err) {
         if (err.response) {
@@ -127,10 +135,14 @@ const Calc = () => {
 
         }
       })
-      console.log(data)
+      console.log(data.data)
 
       if (data.status === 200) {
         setIsLoading(false)
+        console.log(data);
+        const {goals} = data.data.data
+        // console.log(data.data.data.goals );
+        console.log(goals);
       } else {
         setIsLoading(false);
       }
@@ -191,7 +203,7 @@ const Calc = () => {
               transition={{ duration: 0.85, ease: "easeOut" }}
 
               id='calculator'>
-              <div className="icon-container" onClick={() => setShowCalc(false)} >
+              <div className="icon-container" onClick={() => {setShowCalc(false); setShowRes(false)}} >
                 <GrClose />
               </div>
 
@@ -251,7 +263,7 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit' onClick={() => setShowRes((prev) => !prev)} >
+                    <button type='submit' onClick={() => setShowRes((prev) => !prev)  } >
                       {isLoading ?
 
                         <Puff
@@ -272,19 +284,21 @@ const Calc = () => {
                   </div>
 
                   <div className="clear">
-                    <button type='reset' onClick={clearForm}>Clear</button>
+                    <button type='reset' onClick={()=> {clearForm(); setShowRes(false)}}>Clear</button>
                   </div>
                 </div>
 
               </form>
               {showRes &&
+              
+
               <div className="result "> 
               <div className="title">
                 <h4>Result</h4>
               </div>
               <div className="result-form">
 
-
+                
                 <div className="maintain-weight">
                   <div className="text">
                     <p>Maintain weight</p>
@@ -324,6 +338,7 @@ const Calc = () => {
                     <span>Calories/day</span>
                   </div>
                 </div>
+                
               </div>
               
               </div>
