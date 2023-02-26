@@ -23,6 +23,7 @@ const Calc = () => {
   const [isLoading, setIsLoading] = useState()
   const [gender, setGender] = useState('')
   const { t, i18n } = useTranslation();
+  const [dataResult , setDataResult] =useState()
   const [calories, setCalories] = useState({
     age: "",
     height: "",
@@ -110,6 +111,7 @@ const Calc = () => {
 
 
       const data = await axios.get(`https://fitness-calculator.p.rapidapi.com/dailycalorie`,
+      
 
         {
           params: {
@@ -126,7 +128,6 @@ const Calc = () => {
         }
         
         
-        
 
       ).catch(function (err) {
         if (err.response) {
@@ -134,6 +135,7 @@ const Calc = () => {
           setError(err.response.data.message)
 
         }
+        setDataResult()
       })
       console.log(data.data)
 
@@ -263,7 +265,7 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit' onClick={() => setShowRes((prev) => !prev)  } >
+                    <button type='submit' onClick={() => setShowRes(true) } >
                       {isLoading ?
 
                         <Puff
