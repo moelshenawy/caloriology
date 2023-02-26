@@ -20,7 +20,10 @@ const Calc = () => {
   const [errorList, setErrorList] = useState([])
   const [error, setError] = useState([])
   // set state
-  const [weight, setWeight] = useState(null)
+  const [maintainWeight, setMaintainWeight] = useState(null)
+  const [mildWeightLoss, setMildWeightLoss] = useState(null)
+  const [weightLoss, setWeightLoss] = useState(null)
+  const [extremeWeightLoss, setExtremeWeightLoss] = useState(null)
 
   const [isLoading, setIsLoading] = useState()
   const [gender, setGender] = useState('')
@@ -91,7 +94,10 @@ const Calc = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-
+    setMaintainWeight()
+    setMildWeightLoss()
+    setWeightLoss()
+    setExtremeWeightLoss()
     setIsLoading(true);
 
     let validationRes = validationForm();
@@ -137,13 +143,17 @@ const Calc = () => {
           setError(err.response.data.message)
 
         }
-        setDataResult()
       })
-      console.log(data.data)
+      setMaintainWeight(Math.floor(data.data.data.goals['maintain weight']))
+      setMildWeightLoss(Math.floor(data.data.data.goals["Mild weight loss"].calory))
+      setWeightLoss(Math.floor(data.data.data.goals["Weight loss"].calory))
+      setExtremeWeightLoss(Math.floor(data.data.data.goals["Extreme weight loss"].calory))
 
       if (data.status === 200) {
         setIsLoading(false)
         console.log(data);
+        console.log(maintainWeight);
+        
         // console.log(data.data.data.goals );
       } else {
         setIsLoading(false);
@@ -162,6 +172,10 @@ const Calc = () => {
       activity: ''
 
     })
+    // setMaintainWeight()
+    // setMildWeightLoss()
+    // setWeightLoss()
+    // setExtremeWeightLoss()
   }
 
   const validationForm = () => {
@@ -304,17 +318,17 @@ const Calc = () => {
                         <p>Maintain weight</p>
                       </div>
                       <div className="weight-result">
-                        <p>{weight}</p>
+                        <p>{maintainWeight}</p>
                         <span>Calories/day</span>
                       </div>
                     </div>
 
-                    <div className="mid-weight-loss">
+                    <div className="mild-weight-loss">
                       <div className="text">
-                        <p>Mid weight loss</p>
+                        <p>Mild weight loss</p>
                       </div>
                       <div className="weight-result">
-                        <p>2,046</p>
+                        <p>{mildWeightLoss}</p>
                         <span>Calories/day</span>
                       </div>
                     </div>
@@ -324,7 +338,7 @@ const Calc = () => {
                         <p>Weight loss</p>
                       </div>
                       <div className="weight-result">
-                        <p>2,046</p>
+                        <p>{weightLoss}</p>
                         <span>Calories/day</span>
                       </div>
                     </div>
@@ -334,7 +348,7 @@ const Calc = () => {
                         <p>Extreme weight loss</p>
                       </div>
                       <div className="weight-result">
-                        <p>2,046</p>
+                        <p>{extremeWeightLoss}</p>
                         <span>Calories/day</span>
                       </div>
                     </div>
