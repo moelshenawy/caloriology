@@ -19,11 +19,13 @@ const Calc = () => {
   const [female, setFemale] = useState(false)
   const [errorList, setErrorList] = useState([])
   const [error, setError] = useState([])
+  // set state
+  const [weight, setWeight] = useState(null)
 
   const [isLoading, setIsLoading] = useState()
   const [gender, setGender] = useState('')
   const { t, i18n } = useTranslation();
-  const [dataResult , setDataResult] =useState()
+  const [dataResult, setDataResult] = useState()
   const [calories, setCalories] = useState({
     age: "",
     height: "",
@@ -125,9 +127,9 @@ const Calc = () => {
             "X-RapidAPI-Host": 'fitness-calculator.p.rapidapi.com'
           }
         }
-        
-        
-        
+
+
+
 
       ).catch(function (err) {
         if (err.response) {
@@ -137,7 +139,7 @@ const Calc = () => {
         }
         setDataResult()
       })
-      console.log(data.data.data.goals["Extreme weight gain"].calory)
+      console.log(data.data)
 
       if (data.status === 200) {
         setIsLoading(false)
@@ -175,7 +177,7 @@ const Calc = () => {
     return scheme.validate(calories, { abortEarly: false });
   };
 
-
+  console.log(weight)
   return (
     <>
       <section id='calc' className={`${showCalc && 'pb-5'}`}>
@@ -261,7 +263,7 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit' onClick={() => setShowRes(true)  } >
+                    <button type='submit' onClick={() => setShowRes(true)} >
                       {isLoading ?
 
                         <Puff
