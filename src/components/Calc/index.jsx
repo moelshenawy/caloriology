@@ -98,6 +98,7 @@ const Calc = () => {
     setMildWeightLoss()
     setWeightLoss()
     setExtremeWeightLoss()
+    
     setIsLoading(true);
 
     let validationRes = validationForm();
@@ -141,6 +142,7 @@ const Calc = () => {
         if (err.response) {
           setIsLoading(false);
           setError(err.response.data.message)
+          
 
         }
       })
@@ -151,6 +153,7 @@ const Calc = () => {
 
       if (data.status === 200) {
         setIsLoading(false)
+        setShowRes(true)
         console.log(data);
         console.log(maintainWeight);
         
@@ -163,19 +166,17 @@ const Calc = () => {
 
 
 
-  // const clearForm = () => {
-  //   setCalories({
-  //     // age: "",
-  //     // height: "",
-  //     // weight: "",
-  //     // userGender: "",
-  //     // activity: ''
+  // const clearForm = (e) => {
+  //   // setCalories({
+  //   //   age: "",
+  //   //   height: "",
+  //   //   weight: "",
+  //   //   userGender: "",
+  //   //   activity: ''
+  //   // })
 
-  //   })
-  //   // setMaintainWeight()
-  //   // setMildWeightLoss()
-  //   // setWeightLoss()
-  //   // setExtremeWeightLoss()
+
+    
   // }
 
   const validationForm = () => {
@@ -227,7 +228,7 @@ const Calc = () => {
                   <label htmlFor="age">Age</label>
                   <input name='age' onChange={getCalories}
                     type="number" placeholder='25' />
-                  <span>cm</span>
+                  {/* <span>cm</span> */}
                 </div>
 
                 <div className="gender">
@@ -259,7 +260,7 @@ const Calc = () => {
                   <label htmlFor="weight">Weight</label>
                   <input name='weight' onChange={getCalories}
                     type="number" placeholder='180' />
-                  <span>cm</span>
+                  <span>kg</span>
                 </div>
 
                 <div className="activity" onChange={getCalories}>
@@ -277,7 +278,7 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit' onClick={() => setShowRes(true)} >
+                    <button type='submit' onClick={console.log(errorList)}  >
                       {isLoading ?
 
                         <Puff
