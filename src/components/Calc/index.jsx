@@ -99,6 +99,7 @@ const Calc = () => {
     setWeightLoss()
     setExtremeWeightLoss()
     
+    
     setIsLoading(true);
 
     let validationRes = validationForm();
@@ -166,18 +167,19 @@ const Calc = () => {
 
 
 
-  // const clearForm = (e) => {
-  //   // setCalories({
-  //   //   age: "",
-  //   //   height: "",
-  //   //   weight: "",
-  //   //   userGender: "",
-  //   //   activity: ''
-  //   // })
+  const clearForm = () => {
+    setCalories({
+      age: "",
+      height: "",
+      weight: "",
+      userGender: "",
+      activity: ''
+    })
+    // getCalories()
 
 
     
-  // }
+  }
 
   const validationForm = () => {
     let scheme = Joi.object({
@@ -231,6 +233,17 @@ const Calc = () => {
                   {/* <span>cm</span> */}
                 </div>
 
+                    {errorList.map((err , i) =>{
+                      if(err.message.includes("age")) {
+                        return (
+                          <div className="err">
+                          <p className='text-danger '>Age must b greater than 5 and less than 80 *</p>
+                          
+                  </div>
+                        )
+                      }
+                    })}
+
                 <div className="gender">
                   <label htmlFor="gender">Gender</label>
                   <div className="male" onClick={changeMale}>
@@ -248,6 +261,15 @@ const Calc = () => {
 
 
                 </div>
+                {errorList.map((err , i) =>{
+                  if(err.message.includes("userGender")) {
+                    return (
+                      <div className='err'>
+                        <p className='text-danger'>Gender is required *</p>
+                      </div>
+                    )
+                  }
+                })}
 
                 <div className="height">
                   <label htmlFor="height">Height</label>
@@ -256,12 +278,32 @@ const Calc = () => {
                   <span>cm</span>
                 </div>
 
+                {errorList.map((err , i) =>{
+                  if(err.message.includes("height")) {
+                    return (
+                      <div className='err'>
+                        <p className='text-danger'>Height is required *</p>
+                      </div>
+                    )
+                  }
+                })}
+
                 <div className="weight">
                   <label htmlFor="weight">Weight</label>
                   <input name='weight' onChange={getCalories}
                     type="number" placeholder='180' />
                   <span>kg</span>
                 </div>
+
+                {errorList.map((err , i) =>{
+                  if(err.message.includes("weight")) {
+                    return (
+                      <div className='err'>
+                        <p className='text-danger'>Weight is required *</p>
+                      </div>
+                    )
+                  }
+                })}
 
                 <div className="activity" onChange={getCalories}>
                   <label htmlFor="activity">Activity</label>
@@ -278,7 +320,7 @@ const Calc = () => {
 
                 <div className="btns-container">
                   <div className="calc">
-                    <button type='submit' onClick={console.log(errorList)}  >
+                    <button type='submit'   >
                       {isLoading ?
 
                         <Puff
@@ -299,7 +341,7 @@ const Calc = () => {
                   </div>
 
                   <div className="clear">
-                    <button type='reset' onClick={() => {  setShowRes(false) }}>Clear</button>
+                    <button type='reset' onClick={() => {  setShowRes(false);clearForm(calories); console.log(calories); }}>Clear</button>
                   </div>
                 </div>
 
