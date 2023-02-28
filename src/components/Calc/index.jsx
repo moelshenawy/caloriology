@@ -183,7 +183,7 @@ const Calc = () => {
 
   const validationForm = () => {
     let scheme = Joi.object({
-      age: Joi.number().min(5).max(80).required(),
+      age: Joi.number().min(15).max(80).required(),
       weight: Joi.number().min(40).max(160).required(),
       height: Joi.number().min(130).max(230).required(),
       userGender: Joi.string().required(),
@@ -237,7 +237,7 @@ const Calc = () => {
                       if(err.message.includes("age")) {
                         return (
                           <div className="err">
-                          <p className='text-danger '>Age must b greater than 5 and less than 80 *</p>
+                          <p className='text-danger '>Age must be greater than 14 and less than 80 *</p>
                           
                   </div>
                         )
